@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+.videoPlayer {
+    height: 360px;
+    width: 640px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+video {
+    width: 100%;
+    position: fixed;
+    z-index: -10;
+}
+
+#allControls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/*progress bar*/
+#progress {
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+}
+/*for Chrome and Safari*/
+progress[value]::-webkit-progress-value {
+    -webkit-appearance: none !important;
+    background: yellow;
+}
+/*!*for Firefox*!*/
+progress[value]::-moz-progress-bar {
+    -webkit-appearance: none !important;
+    background: yellow;
+}
+
+/*control panel*/
+.controls {
+    display: none;
+    z-index: 10;
+    transform: translateY(100%);
+    background-color: #fff;
+    text-align: center;
+}
+.videoPlayer:hover .controls {
+    display: block;
+    z-index: 10;
+    position: relative;
+    transform: translateY(0%);
+}
+.videoPlayer:hover #progress {
+    transform: translateY(0%);
+}
+input {
+    width: 240px;
+}
+button {
+    width: auto;
+    border: none;
+    background: none;
+}
+button:hover {
+    background: rgba(0,0,0,0.1);
+}
+span {
+    transform: rotate(180deg);
+    display: inline-block;
+    vertical-align: middle;
+}
